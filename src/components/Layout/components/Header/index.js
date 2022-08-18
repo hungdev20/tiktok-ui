@@ -9,13 +9,13 @@ import {
   faEarthAsia,
   faCircleQuestion,
   faKeyboard,
-  faCloudUpload,
   faUser,
   faCoins,
   faGear,
   faSignOut,
 } from '@fortawesome/free-solid-svg-icons';
 
+import { UploadIcon } from '~/components/Icons';
 import Tippy from '@tippyjs/react';
 import HeadlessTippy from '@tippyjs/react/headless';
 
@@ -26,6 +26,7 @@ import images from '~/assets/images';
 import AccountItem from '~/components/AccountItem';
 import Menu from '~/components/Popper/Menu';
 import 'tippy.js/dist/tippy.css';
+import Image from "~/components/Image";
 const cx = classNames.bind(styles);
 
 const MENU_ITEMS = [
@@ -118,7 +119,7 @@ function Header() {
             <>
               <Tippy delay={[0, 200]} content="Upload video" placement="bottom">
                 <button className={cx('action-btn')}>
-                  <FontAwesomeIcon icon={faCloudUpload} />
+                 <UploadIcon />
                 </button>
               </Tippy>
             </>
@@ -131,10 +132,11 @@ function Header() {
 
           <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
             {currentUser ? (
-              <img
+              <Image
                 className={cx('user-avatar')}
-                src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/094cbc21cbf705c4e5518f478c7deaf1~c5_100x100.jpeg?x-expires=1660888800&x-signature=2SBb3lxkev2KqE4JDHREAYsbD00%3D"
+                src="https://p16-sign-v.tiktokcdn.com/tos-useast2a-avt-0068-giso/094cbc21cbf705c4e5518f478c7deaf1~c5_100x100.jpeg?x-expires=1660888800&x-signature=2SBb3lxkev2KqE4JDHREAYsbD00%3D"
                 alt="nguyen van a"
+                fallback="https://p16-sign-sg.tiktokcdn.com/aweme/720x720/tos-alisg-avt-0068/7101679554267185154.jpeg?x-expires=1660975200&x-signature=Dn2xMuemUf83wJreC94a2oyi8Cc%3D"
               />
             ) : (
               <button className={cx('more-btn')}>
