@@ -52,7 +52,7 @@ function Search() {
   };
 
   return (
-   <div>
+    <div>
       <HeadlessTippy
         interactive
         visible={showResult && searchResult.length > 0}
@@ -83,13 +83,13 @@ function Search() {
             </button>
           )}
           {loading && <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />}
-  
+
           <button className={cx('search-btn')} onMouseDown={(e) => e.preventDefault()}>
             <SearchIcon />
           </button>
         </div>
       </HeadlessTippy>
-   </div>
+    </div>
   );
 }
 
